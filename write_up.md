@@ -34,5 +34,6 @@
 - Tại vì khi em chạy trên chall ở task hiện tại thì chương trình có thể bị lỗi j đó khiến nó ko in dữ liệu ra như thường
 -  Và sau khi em thay đổi write_end = write_ptr thì nó mới chịu in ra data như thường
 - Mà file struct cũng có 1 thành phần khá quan trọng tên là vtable
+
 ### Vtable
 - Kiến thức này thì em ko có sử dụng trong chall hiện tại nhưng em tìm hiểu thì thấy có vẻ cx cần thiết trong các chall khó
