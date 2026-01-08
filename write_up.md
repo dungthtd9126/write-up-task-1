@@ -47,7 +47,10 @@
 - Do đó sẽ phải thực hiện thêm vài bước để thực sự nhảy vô đc fake vtable
 - Nhưng mà kiến thức này khá sâu và xa nên em tạm bỏ qua, chừng nào gặp thì em sẽ đào thêm
 - Tài liệu mà em tham khảo chủ yếu là pwn college, em sẽ lưu ở dây để tiện các lần sau nếu em cần xem lại wu
+
 - https://docs.google.com/presentation/d/1Rs04LzYjD4eQ4_TJZCMDJMS8UNcpQ_OXcBpxzKpanC4/edit?slide=id.g205983036a9_0_28#slide=id.g205983036a9_0_28
+
 - https://pwn.college/software-exploitation/file-struct-exploits
+
 - Kĩ thuật nâng cao hơn về fsop:
 + https://blog.kylebot.net/2022/10/22/angry-FSROP/#PC2ROP
