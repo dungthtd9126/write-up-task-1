@@ -1,5 +1,13 @@
 # write-up-task-1
 
+## command note
+
+- check full IO file struct plus of an address or stdin, stdout, stderr:
+    - p *((struct _IO_FILE_plus *) <addr> )
+      - addr: stdout, stdin, address of an IO file struct
+- check IO file:
+    - p *<addr>
+
 ## Kiến thức học được về fsop
 
 - Đầu tiên thì em học được về cấu trúc của 1 file structure sẽ bao gồm các thành phần chính trong ảnh dưới đây
