@@ -6,6 +6,9 @@
 
 <img width="1723" height="839" alt="image" src="https://github.com/user-attachments/assets/9e422a4c-5be5-469a-a1ca-cf0c4846797c" />
 
+<img width="581" height="778" alt="image" src="https://github.com/user-attachments/assets/505f19a8-1533-4616-b707-2a0b39eee6f7" />
+
+
 - 1 số kiến thức cần chú ý là các loại ptr
 - Mỗi loại ptr đều có 1 mục tiêu sử dụng riêng
 - Và em có thể sử dụng chúng để thực hiện 1 trong 2 hành động là leak data hoặc ghi đè lên vùng mong muốn
