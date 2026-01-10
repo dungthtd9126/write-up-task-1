@@ -1,5 +1,8 @@
 # write-up-task-1
 
+## glibc download
+-glib all in one: https://github.com/matrix1001/glibc-all-in-one
+
 ## command note
 
 - check full IO file struct plus of an address or stdin, stdout, stderr:
