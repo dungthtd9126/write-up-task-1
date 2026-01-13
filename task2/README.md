@@ -1,9 +1,4 @@
 # Write up task 2 CLB
-
-## source glibc 2.31
-
-- https://elixir.bootlin.com/glibc/glibc-2.31/source/libio/libioP.h#L935
-
 ## Document
 
 - https://github.com/un1c0rn-the-pwnie/FSOPAgain
@@ -35,10 +30,14 @@
 - So in my poc, its pretty simple
 - First leak libc and heap address, i used the same method in task 1 so ill skip this part
 - Lets ret2shell with fsop from here
-- Overwrite wide data of stdout --> to heap address that i can control data inside it
+- First, we should carefull a bit about lock variable
+![image](https://hackmd.io/_uploads/HyQ-py4Sbe.png)
+- We should overwrite lock ptr to random address that far away our fake vtable as it may block us from writing into that area
+- Then overwrite wide data of stdout to heap address that i can control data inside it
 - At that moment, i can fake a vtable ptr without meeting vtable check
 - Inside that heap address, ill write that exact heap address again at fake_wide_data.vtable
 - It will then call 'heap_addr + 0x38'
 - Ill use this gadget to call one gadget by writing the address of one gadget in 'heap_addr + 0x38' 
 - After it call 'heap_addr + 0x38', ill get shell from here
+- 
 ![image](https://hackmd.io/_uploads/Skp091VBZg.png)
