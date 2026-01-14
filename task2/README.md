@@ -31,14 +31,16 @@
 - So in my poc, its pretty simple
 - First leak libc and heap address, i used the same method in task 1 so ill skip this part
 - Lets ret2shell with fsop from here
-- First, we should carefull a bit about lock variable
+- First of all, we should carefull a bit about lock variable
 ![image](https://hackmd.io/_uploads/HyQ-py4Sbe.png)
 - We should overwrite lock ptr to random address that far away our fake vtable as it may block us from writing into that area
-- Then overwrite wide data of stdout to heap address that i can control data inside it
-- At that moment, i can fake a vtable ptr without meeting vtable check
+- After that, we should set flag to 0 as in IO_wfile_overflow will have some conditional check. And it will compare our fake flag with some value, we have to make sure it will these conditions result in false
+<img width="1651" height="410" alt="image" src="https://github.com/user-attachments/assets/1be3e0e4-97d8-400c-8b63-d7c3f255a65d" />
+- As we can see in the picture above, there is also a check at 'fake_wdata + 0x18', rdx is storing our fake vtable addr. But we dont need to bother it. I just need to set all data except our one gadget and 'fake wide data --> vtable' as 'NULL'
+- The next step is overwriting wide data of stdout to heap address that i can control data inside it
+- At that moment, i can fake a vtable ptr without meeting vtable check 
 - Inside that heap address, ill write that exact heap address again at fake_wide_data.vtable
 - It will then call 'heap_addr + 0x38'
 - Ill use this gadget to call one gadget by writing the address of one gadget in 'heap_addr + 0x38' 
 - After it call 'heap_addr + 0x38', ill get shell from here
-
 ![image](https://hackmd.io/_uploads/Skp091VBZg.png)
