@@ -52,3 +52,16 @@
           - Arch: 0xb0c0
           - Ubuntu: 0xa0c0
 - As you can see, i brute force the 4 bit '0xb' or '0xa' in this chall, so it doesnt matter if in NOASLR mode on arch that give different bit. It still ok as im brute forcing, not a absolute address so it still true, we just cant use NOASLR on arch to auto get shell for test like on ubuntu  
+## Bonus 2
+- From what i researched, i learnt that fsop is a technique base on controlling the flow of program.
+- And we can use that for different purpose, arbitrary read/write or even get shell!!
+### Get shell
+- There are multiple ways to get shell by fsop even with vtable check
+- We can use some popular techinque like overwrite IO_list_all variable and call shell
+
+<img width="1526" height="898" alt="image" src="https://github.com/user-attachments/assets/29e85ed1-df77-4615-a501-4e3c61b776c8" />
+
+- We can use the chain area to execute ropchain or get system('/bin/sh') when the program abort or end
+
+<img width="1599" height="873" alt="image" src="https://github.com/user-attachments/assets/09d34a46-e2c4-406f-b128-ef57df110078" />
+
