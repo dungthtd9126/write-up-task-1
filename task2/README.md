@@ -65,3 +65,9 @@
 
 <img width="1599" height="873" alt="image" src="https://github.com/user-attachments/assets/09d34a46-e2c4-406f-b128-ef57df110078" />
 
+- Also, we can use this tecnique with fcloseall as it call IO_clean_up with has _IO_flush_all_lockp in it
+<img width="477" height="320" alt="image" src="https://github.com/user-attachments/assets/78c11968-5bc5-43b9-a01c-ebc7e13ab4b1" />
+
+<img width="919" height="425" alt="image" src="https://github.com/user-attachments/assets/79718705-b003-44e7-9efb-3f1304f2ddb9" />
+
+- And as we can see,
