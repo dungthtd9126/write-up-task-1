@@ -74,7 +74,7 @@
 
 <img width="1449" height="846" alt="image" src="https://github.com/user-attachments/assets/46db00bc-97b0-4b82-80eb-03f1d261553d" />
 
-- We can abuse this to call system('sh') when it checks each IO file connected by chain section
+- We can abuse this to call system('sh') when it checks each IO file connected by chain section in abort progress
   <img width="1493" height="903" alt="image" src="https://github.com/user-attachments/assets/34eb85ca-1004-49d6-9ecc-d45a8d1303e1" />
 
 
