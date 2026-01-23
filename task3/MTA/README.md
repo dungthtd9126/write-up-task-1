@@ -76,4 +76,6 @@
 - Also i should have read and understand the python code despite unfamiliar code. I wasted tons of time because i keep skim the code at input and encode place but not trying to read and understand deeply in the python program 
 <img width="962" height="690" alt="image" src="https://github.com/user-attachments/assets/f6e45b5b-c51d-4381-9dc6-b90e4b3d8a3c" />
 
+- I also learnt that if any char that is bigger than 256 after encoded will result in 2 byte, not 1 byte like usual
+
 
