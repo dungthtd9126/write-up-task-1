@@ -60,3 +60,11 @@
 - There is also a write files which we can write a amount of byte that is the same with the section size
 - And PIE is off, thats mean i can just stack pivot to this section and rop chain to get shell
 - Note that we need to register and login first, then we just need to abuse read and write function to fmtstr to control our program run to our rop chain by stack pivot
+## handler
+- This chall is pretty tricky for me, it has serious bof in program and i can bypass the len check and ret2win with no PIE
+
+<img width="620" height="777" alt="image" src="https://github.com/user-attachments/assets/f5b2fb8a-f262-4577-9289-8eb74375899b" />
+
+
+- But the problem is i always get error when sending payload to the server because the server will encode my input
+
