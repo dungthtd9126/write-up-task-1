@@ -63,8 +63,17 @@
 ## handler
 - This chall is pretty tricky for me, it has serious bof in program and i can bypass the len check and ret2win with no PIE
 
-<img width="620" height="777" alt="image" src="https://github.com/user-attachments/assets/f5b2fb8a-f262-4577-9289-8eb74375899b" />
+<img width="783" height="854" alt="image" src="https://github.com/user-attachments/assets/bbefedcf-ee28-45d8-be87-e44e8f995e98" />
+<img width="616" height="760" alt="image" src="https://github.com/user-attachments/assets/f08969b9-824d-40df-a11f-3f2ddfce74f0" />
 
 
-- But the problem is i always get error when sending payload to the server because the server will encode my input
+- As we can see, there are 2 len check. The first len check is from python
+- I can easily bypass this by send special emojis which consume 4 bytes
+- This means that i can send tons of emoji consumng 4x bytes than usual but the len function in python still count each len of a emoji as 1
+- After easily bypass the python program, we will meet len check in C. I can easily bypass this too by sending null at first payload so the function will stop immediately
+- So I will use the method of sending string so that the program will encode later in the code
+- This challenge give me some lessons that i should be aware of which time i should send string or byte or anyother type of data based on the challenge
+- Also i should have read and understand the python code despite unfamiliar code. I wasted tons of time because i keep skim the code at input and encode place but not other 
+<img width="962" height="690" alt="image" src="https://github.com/user-attachments/assets/f6e45b5b-c51d-4381-9dc6-b90e4b3d8a3c" />
+
 
