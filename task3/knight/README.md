@@ -26,4 +26,8 @@
 
 <img width="453" height="201" alt="image" src="https://github.com/user-attachments/assets/690c7295-7275-47a3-8127-630acf2220ff" />
 
-- In this stage, i used AI to guess it usage. And from what gemini teach me, it is use to compare 
+- In this stage, i used AI to guess it usage. And from what gemini teach me, it is use to compare the position 'i' with the ascii of a char 'x' arguments
+- If the value is right, it will return 1. If wrong, it may return -1 or 0
+- At this stage, i used AI to write brute force each char of the flag
+- The idea is pretty simple, ill guess each character at 0 index first. If it return 1, ill increase the index and guess from start and repeat to the end of the flag
+##
