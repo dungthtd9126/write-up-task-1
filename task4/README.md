@@ -25,7 +25,7 @@
 <img width="962" height="566" alt="image" src="https://github.com/user-attachments/assets/cefd54bf-ec89-4988-aaf6-8fad63ef7d6b" />
 
 - I dont know what function is stored in rdx, the only thing i know is it will do recursive thing in that function
-- Thats why the program must call lock first to avoid data condition bug, but i overwrote lock ptr so it will call shell
+- Thats why the program must call lock first to avoid data condition bug, but i had overwriten lock ptr so it will call shell
 
 <img width="958" height="933" alt="image" src="https://github.com/user-attachments/assets/61f9548e-44fd-4c2d-abf0-f0219a41d0a7" />
 
