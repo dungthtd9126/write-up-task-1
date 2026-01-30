@@ -1,5 +1,7 @@
 # reverse shell web
-- https://www.revshells.com/
+- Reverse shell generator: https://www.revshells.com/
+# document
+- https://viblo.asia/p/hieu-ro-ve-reverse-shells-LzD5ddE45jY
 # Solve
 - In this task, i learnt 2 main techniques, which is rtld global's func ptr overwrite and reverse shell
 ## Overwrite lock recursive pointer
