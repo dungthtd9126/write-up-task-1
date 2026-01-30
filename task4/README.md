@@ -21,7 +21,7 @@
 <img width="962" height="297" alt="image" src="https://github.com/user-attachments/assets/da6a7098-3cc8-4e19-a2a5-9cb2df1b7697" />
 
 - To confirm that, i need to check the stack when the program is ready to call it
-- From what i learnt, before it call my one gadget, it will call rdx in my debugger
+- From what i debugged, before it call my one gadget, it will call rdx in my debugger
 <img width="962" height="566" alt="image" src="https://github.com/user-attachments/assets/cefd54bf-ec89-4988-aaf6-8fad63ef7d6b" />
 
 - I dont know what function is stored in rdx, the only thing i know is it will do recursive thing in that function
