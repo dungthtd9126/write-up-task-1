@@ -35,7 +35,7 @@
   
 ## Recursive shell
 
-- This is the final stage after getting shell. I need use this techinque because the program's fd 1 and fd 2 are closed
+- This is the final stage after getting shell. I need to use this techinque because the program's fd 1 and fd 2 are closed
 
 - This mean even if i get shell, i cant get anything from the target as it will output nothing
 
