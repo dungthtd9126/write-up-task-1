@@ -45,7 +45,7 @@
 
 - The new shell will just like the shell in a server, all it pipes are bidirectional, it uses sockets to output / input
 
-- The only different is i controled the server by default because it is my server
+- The only different is i controlled the server by default because it is my server
 
 - And most importantly, it has all pipes open
 
