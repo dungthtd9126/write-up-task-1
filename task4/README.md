@@ -8,7 +8,8 @@
 - The code of challenge is pretty simple, it give me libc which i can get libc base then close fd 1 and 2
 - I also can overwrite 1 byte of any address that is chosen by my first inpput. And this loop 5 times
 - That means i can write maximum 5 bytes to a value of an address
-- Because this is libc 2.23, which has recursive lock pointer (newer version is hid or encrypted), ill overwrite _rtld_global._dl_rtld_lock_recursive function ptr stored in rtld global
+- Because this is libc 2.23, which has recursive lock pointer (newer version is hid or encrypted), ill overwrite _dl_rtld_lock_recursive function ptr stored in rtld global
+- Command to search its address fast: _rtld_global._dl_rtld_lock_recursive
 
 - After overwrite:
 <img width="963" height="351" alt="image" src="https://github.com/user-attachments/assets/82f56995-09de-4e89-9189-99306a5ea55e" />
