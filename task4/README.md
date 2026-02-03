@@ -5,6 +5,7 @@
 # Solve
 - In this task, i learnt 2 main techniques, which is rtld global's func ptr overwrite and reverse shell
 ## Overwrite lock recursive pointer
+
 <img width="832" height="421" alt="image" src="https://github.com/user-attachments/assets/b6e8e175-3aca-4e0c-b409-6ac4a25f67ba" />
 
 - The code of challenge is pretty simple, it give me libc which i can get libc base then close fd 1 and 2
